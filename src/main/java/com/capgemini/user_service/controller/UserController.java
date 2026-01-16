@@ -25,6 +25,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/TEST")
+    public ResponseEntity<List<User>> usersTest(){
+        return ResponseEntity.ok(userService.getUsers());
+    }
+
     @GetMapping("/getUsers")
     public ResponseEntity<List<User>> users(){
         return ResponseEntity.ok(userService.getUsers());
