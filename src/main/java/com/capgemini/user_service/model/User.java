@@ -1,5 +1,6 @@
 package com.capgemini.user_service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity(name = "user_data")
@@ -10,6 +11,7 @@ public class User {
     private Long userId;
     @Column(name = "user_name")
     private String userName;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password")
     private String password;
     @ManyToOne(fetch = FetchType.LAZY)
